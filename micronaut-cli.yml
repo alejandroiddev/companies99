@@ -1,0 +1,5 @@
+profile: service
+defaultPackage: com.alejandroid
+---
+testFramework: spek
+sourceLanguage: kotlin
