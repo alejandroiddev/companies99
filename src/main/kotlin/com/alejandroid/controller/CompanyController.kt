@@ -12,12 +12,12 @@ import io.reactivex.Maybe
 class CompanyController(private val companyService: CompanyService) {
 
     @Get("/companies")
-    fun getCompanies(): Maybe<MutableHttpResponse<List<Company>>> {
-        return companyService.getCompanies().map { HttpResponse.ok(it) }
+    fun getCompanies(): MutableHttpResponse<MutableList<Company>>? {
+        return  HttpResponse.ok(companyService.getCompanies())
     }
 
     @Get("/companies/{id}")
-    fun findCompanyById(id: String): Maybe<MutableHttpResponse<Company>> {
-        return companyService.findCompany(id).map { HttpResponse.ok(it) }
+    fun findCompanyById(id: Long): MutableHttpResponse<Company> {
+        return HttpResponse.ok(companyService.findCompany(id))
     }
 }

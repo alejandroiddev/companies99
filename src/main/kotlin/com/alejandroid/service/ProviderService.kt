@@ -8,8 +8,8 @@ import io.reactivex.Flowable
 @Client("https://dev.ninetynine.com")
 interface ProviderService {
     @Get("/testapi/1/companies")
-    fun fetchCompanies(): Flowable<List<Company>>
+    fun fetchCompanies(): MutableList<Company>
 
     @Get("/testapi/1/companies/{id}")
-    fun fetchOneCompany(id: String): Flowable<Company>
+    fun fetchOneCompany(id: Long): Company
 }

@@ -1,11 +1,18 @@
 package com.alejandroid.domain
 
-//{"id":1,"name":"Apple Inc.","ric":"APPL","sharePrice":202.262,"description":"Lorem ipsum is your friend ;)","country":"United States of America"}
-//{"id":1,"name":"Apple Inc.","ric":"APPL","sharePrice":218.467}
+import javax.persistence.Column
+import javax.persistence.Entity
+import javax.persistence.Id
 
-data class Company(var id: String = "",
-                   var name: String = "",
-                   var ric: String = "",
-                   var sharePrice: Double = 0.0,
-                   var description: String = "",
-                   var country: String = "")
+@Entity
+data class Company(
+        @Id
+        var id: Long = 0,
+
+        var name: String = "",
+        var ric: String = "",
+        @Column(name = "share_price")
+        var sharePrice: Double = 0.0,
+        var description: String = "",
+        var country: String = ""
+)

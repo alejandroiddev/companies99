@@ -1,3 +1,18 @@
 micronaut:
     application:
         name: companyms
+datasources:
+    default:
+        url: jdbc:postgresql://localhost:5432/ninetynine?ssl=false
+        username: user
+        password: 12341234
+        driverClassName: org.postgresql.Driver
+jpa:
+    default:
+        packages-to-scan:
+            - 'com.alejandroid.domain'
+        properties:
+            hibernate:
+                hbm2ddl:
+                    auto: update
+                show_sql: false
